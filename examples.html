@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>MiEmpresa Ejemplos</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">MI<span class="logo_colour">Empresa</span></a></h1>
+          <h2>Sencillo. Contemporáneo. Nuestro sitio web.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="index.html">Casa</a></li>
+          <li class="selected"><a href="examples.html">Ejemplos</a></li>
+          <li><a href="page.html">Una pagina</a></li>
+          <li><a href="another_page.html">Otra pagina</a></li>
+          <li><a href="contact.html">Contactanos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <h3>Ultimas noticias</h3>
+        <h4>Un nuevo sitio web fue habilitado</h4>
+        <h5>19 de Mayo de 2021</h5>
+        <p>Este año ve nuestro inicio, eche un vistazo y denos su opinion.<br /><a href="#">Leer mas</a></p>
+        <p></p>
+        <h4>Nuevos servicios a tu alcance</h4>
+        <h5>19 de Mayo de 2021</h5>
+        <p>Tu nos has elegido y nosotros cubriremos tus necesidades<br /><a href="#">Leer mas</a></p>
+        <h3>Referencias</h3>
+        <ul>
+          <li><a href="#">link 1</a></li>
+          <li><a href="#">link 2</a></li>
+          <li><a href="#">link 3</a></li>
+          <li><a href="#">link 4</a></li>
+        </ul>
+        <h3>Buscar</h3>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
+          </p>
+        </form>
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>Ejemplos</h1>
+        <p>Esta página contiene ejemplos de todos los elementos de estilo disponibles como parte de este diseño. Utilice esta página como referencia mientras crea su sitio web.</p>
+        <h2>Encabezado</h2>
+        <p>Diferentes formatos de encabezados:</p>
+        <h1>Encabezado 1</h1>
+        <h2>Encabezado 2</h2>
+        <h3>Encabezado 3</h3>
+        <h4>Encabezado 4</h4>
+        <h5>Encabezado 5</h5>
+        <h6>Encabezado 6</h6>
+        <h2>Texto</h2>
+        <p>Los siguientes ejemplos muestran como el texto(con etiqueta '&lt;p&gt;&lt;/p&gt;') aparecera:</p>
+        <p><strong>Ejemplo de texto en negrita</strong></p>
+        <p><i>Ejemplo de texto en cursiva</i></p>
+        <p><a href="#">Ejemplo de texto en hipervinculo</a></p>
+        <h2>Listas</h2>
+        <p>Esta es una lista desordenada</p>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ul>
+        <p>esta es una lista ordenada</p>
+        <ol>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+        </ol>
+        <h2>Imagenes</h2>
+        <p>Las imagenes pueden ser puestas a izquierda, en el centro o a derecha:</p>
+        <span class="left"><img src="style/graphic.png" alt="example graphic" /></span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum.
+        </p>
+        <span class="center"><img src="style/graphic.png" alt="example graphic" /></span>
+        <span class="right"><img src="style/graphic.png" alt="example graphic" /></span>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+        <h2>Tablas</h2>
+        <p>Las tablas deben usarse para mostrar datos y no para diseñar su sitio web:</p>
+        <table style="width:100%; border-spacing:0;">
+          <tr><th>Item</th><th>Description</th></tr>
+          <tr><td>Item 1</td><td>Descripcion del Item 1</td></tr>
+          <tr><td>Item 2</td><td>Descripcion del Item 2</td></tr>
+          <tr><td>Item 3</td><td>Descripcion del Item 3</td></tr>
+          <tr><td>Item 4</td><td>Descripcion del Item 4</td></tr>
+        </table>
+        <h2>Formularios</h2>
+        <form action="#" method="post">
+          <div class="form_settings">
+            <p><span>Ejemplo de campo </span><input type="text" name="name" value="" /></p>
+            <p><span>Ejemplo de un area de texto</span><textarea rows="8" cols="50" name="name"></textarea></p>
+            <p><span>Ejemplo de un CheckBox</span><input class="checkbox" type="checkbox" name="name" value="" /></p>
+            <p><span>Ejemplo Lista desplegable</span><select id="id" name="name"><option value="1">Ejemplo 1</option><option value="2">Ejemplo 2</option></select></p>
+            <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="name" value="boton" /></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      Copyright &copy; colour_green | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a>
+    </div>
+  </div>
+<div style="text-align: center; font-size: 0.75em;">Diseño descargado desde <a href="http://www.misplantillas.com/">plantillas web gratis y profesionales</a>.</div></body>
+</html>
