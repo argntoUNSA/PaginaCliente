@@ -96,11 +96,11 @@ ol li
 { width: 825px;
   position: relative;
   height: 168px;
-  background: #667F03 url(logo.png) no-repeat;}
+  background: #667F03 url(logo.jpg) no-repeat;}
 
 #logo #logo_text 
 { position: absolute; 
-  top: 20px;
+  top: 70px;
   left: 0;}
 
 #logo h1, #logo h2
