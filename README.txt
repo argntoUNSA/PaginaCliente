@@ -49,6 +49,41 @@ y por mas que intentaba variar el nombre o intercambiarlos siempre tenia la sigu
 
 fatal : 
 
+7) Uso de merge y conflictos: es necesario el uso de merge ya que si se ramifica
+nuestro proyecto, podriamos desear volverlos a alojar dentro de la rama principal
+para esto es que usamos merge. En nuestro caso hemos creado 2 ramas llamadas auxiliar
+y auxiliar2, en una actualizamos los archivos README.txt e index.html, en la otra modifique
+tambien el README.txt pero de otra manera, asi cuando vayamos a mezclar o fusionar
+las ramas podamos ver si surgen conflictos y ver tambien como solucionarlo. Existen 3
+formas de mezclar: La primera llamada fast-foward la cual surge a partir de 2 ramas
+que no tienen archivos comunes editados. La segunda, estrategia recfursiva, surge cuando
+debemos mezclar los cambios efectuados, sabiendo que los mismos no son con respecto a un
+mismo archivo sobre la misma linea, este metodo agreaga y quita en uno lo que se agrego y
+se quito en el otro, todo esto se guarda en un nuevo commit. La 3era manera, mezcla con
+conflicto, nos intentara fusionar por medio del 2do metodo nuestras ramas, pero encontrara
+un mismo archivo modificado sobre una misma linea y nos permitira editar ese archivo para
+asi poder resolver dicho conflicto. Hare un merge sin conflicto y otro con uno. primero 
+mezclo master con auxiliar y vemos que no genera conflicto, luego master con auxiliar 2 y 
+vemos que nos genera un conflicto en el archivo README.txt 
+
+salida al primer merge: 
+	cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+	$ git merge auxiliar
+	Updating 347ccaa..1e2f898
+	Fast-forward
+ 	README.txt | 50 +++++++++++++++++++++++++++++++++++++++++++++++++-
+ 	index.html | 22 +++++++++++-----------
+ 	2 files changed, 60 insertions(+), 12 deletions(-)
+
+salida del segundo merge:
+	cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+	$ git merge auxiliar2
+	Auto-merging README.txt
+	CONFLICT (content): Merge conflict in README.txt
+	Automatic merge failed; fix conflicts and then commit the result.
+
+Haremos otras 2 ramas y las fusiones correspondientes siguiendo asi el tutorial y adquiriendo
+experiencia sobre el tema.
 
 
 
@@ -161,3 +196,10 @@ aun no lo este, en algunas versiones funciona como el comando 'restore'
 		-b <nombre de la rama> : Crea una nueva rama, con el nombre indicado y se
 					mueve hacia ella.
 
+merge: Es una operacion de fusion de ramas, puede generar conflictos en determinados casos.
+Esta fusion tiene 3 metodods posibles: fast-foward, estrategia recursiva y mezcla con conflicto.
+        parametros:
+                <nombre de una rama> : Mezclara la rama actual con aquella indicada.
+
+                --continue : Nos permite resolver los conflictos para luego seguir con
+                        la mezcla y el commit correspondiente <conflicto> --> <resuelve> --> --continue
