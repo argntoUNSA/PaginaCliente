@@ -97,6 +97,58 @@ Segun la informacion de stash, los WorkSpace se guardan en una pila y mediante e
 parecer quedan apilados, con el subcomando'drop' se lo podra quitar de la. Para hacer 
 ambas al mismo tiempo se utiliza el subcomando 'pop'.
 
+9) Los remotos son repositorios distribuidos con los que puedo actualizar mi repositorio 
+local, ellos pueden estar dentro y fuera de nuestra red, e incluso de nuestras 
+computadoras. tambien son los que nos permitira trabajar en grupo para el TP4 o en si para
+la vida laboral. En git podemos crear un repositorio fijo asi podriamos acceder al programa
+a partir de un repositorio local, git no tiene nocion de servidores centrales mas 
+bien nos ve como un conjunto de nodos que se comunican entre si, por lo que nos da la
+oportunidad de tenr uno central, que puede llegar a funcionar como backup. En git tenemos un 
+comando llamado 'remote' que nos permitira agregar remotos u operaciones como 'pull' para 
+recibir informacion del remoto y 'push' para enviar informacion al remoto. 
+
+10) Para este inciso
+cree un ropositorio en github, es publico y la direccion es: 
+	https://github.com/argntoUNSA/PaginaCliente.git
+Luego habilitaremos nuestra conexion y subire todo mi preyecto, esto se reealiza con
+el comando 'add' de 'remoto'. Despues con 'push' podre subir mi raiz master asi
+almacenare nuestro programa, la salida de esos comandos son:
+
+	cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+	$ git remote add origin https://github.com/argntoUNSA/PaginaCliente.git
+	
+	cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+	$ git remote
+	origin
+
+	cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+	$ git push origin master
+	Enumerating objects: 67, done.
+	Counting objects: 100% (67/67), done.
+	Delta compression using up to 2 threads
+	Compressing objects: 100% (65/65), done.
+	Writing objects: 100% (67/67), 165.26 KiB | 364.00 KiB/s, done.
+	Total 67 (delta 31), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (31/31), done.
+	To https://github.com/argntoUNSA/PaginaCliente.git
+ 	* [new branch]      master -> master
+
+11) El inciso anterior se ocupo de copiar todo nuestro repositorio local en el repositorio
+ubicado en GitHub, ahora lo que debemos hacer es clonar ese repositorio en los tutoriales
+el muchacho usa el subcomando 'clone' para clonar el repositorio alojado en GitLab 
+luego lo modifica y actualiza en GitLab los cambios hechos con un 'push' pero esto no
+tiene repercucion en el clon alojado en nuestro repositorio local por lo que luego de
+actualizar el repositorio alojado en GitHub deberiamos actualizar tambien nuesto clon. Para
+realizar todo esto voy a crear primero una carpeta auxiliar llamada PaginaClienteAux
+desde ahi clonare el repositorio que se aloja en GitHub, luego regresare a la carpeta 
+PaginaCliente modificare desde ahi el README.txt, hago el 'add' y el 'commit' correspondiente
+aplicare 'push' sobre la rama principal actualizando asi al repositorio alojado en GitHub 
+(todo esto desde la carpeta PaginaCliente) acto seguido me movere
+a la carpeta auxiliar 
+desde la cual ejecutare 'pull' lo cual deberia actualizar el archivo
+README.txt de mi clon 
+alojado en la carpeta auxiliar.
+
 
 
 
@@ -191,6 +243,26 @@ mv : Mueve y renombra archivos
                 <nombre viejo>...<lugar nuevo/nombre nuevo> : mueve el archivo
 
 
+push : nos permite enviar a nuestro repositorio fijo, todos los cambios realizados en
+el repositorio local. Previamente se debe habilitar la conexion y debe existir el repositorio
+de destino.
+	parametros:
+	 	<nombreR><nombreA> : Envia el archivo llamado "nombreA" hacia el
+				repositorio llamado "NombreR", el cual fue creado
+				previamente a este paso.
+		--all <nombreR> : Envia todo lo que se almacena en este repositorio local, se le 
+				debe indicar el nombre del repositorio de destino. 
+
+
+remote : Nos facilita la creacion y la comunicacion con los remotos, hay que
+tener en cuenta que un remoto no es mas que un repositorio al que podemos tener o no 
+acceso
+	parametros:
+		<> : Enlista los remotos que ya estan habilitados para la comunicacion.
+		add <nombre><direccion>: Habilita la comunicacion con el remoto, el nombre
+					ingresado da nombre al remoto, la direccion
+					ingresada da la ubicacion de ese remoto.
+
 reset : Nos es util para eliminar commits hechos, tiene 3 opciones de uso, el primero
 es por defecto y nos deja los archivos incluidos en esos commits en el espacio de
 trabajo, el segundo con el parametro --soft nos deja los archivos en el Stage y por
@@ -200,10 +272,11 @@ ultimo --hard que nos elimina el commit y su contenido.
                                 espacio de trabajo.
                 <nombre del comit> : elimina todos los commits hasta antes que el nombre indicado.
                 --hard <nombre del archivo: Elimina no solo el commit si no tambien los
-                                                archivos que contenia.
+                                            archivos que contenia.
 		--soft <nombre del archivo> : Elimina el commit nombrado y coloca los
-                                                cambios en el Stage. Aun no se que pasa si
-                                                el 'commit nombrado no es el ultimo.
+                                              cambios en el Stage. Aun no se que pasa si
+                                              el commit nombrado no es el ultimo.
+
 restore: Restaura el estado de un archivo.
         parametros:
                 <nombre del archivo> : elimina el archivo nombrado.
@@ -241,3 +314,4 @@ guiarnos.
                 pop : Simpliffica ambas acciones anteriores.
 		save "<msje descriptivo>" : puede almacenarse con una descripcion
                                         asi nos guiariamos en el desarrollo.
+
