@@ -133,21 +133,121 @@ almacenare nuestro programa, la salida de esos comandos son:
 	To https://github.com/argntoUNSA/PaginaCliente.git
  	* [new branch]      master -> master
 
-11) El inciso anterior se ocupo de copiar todo nuestro repositorio local en el repositorio
-ubicado en GitHub, ahora lo que debemos hacer es clonar ese repositorio en los tutoriales
-el muchacho usa el subcomando 'clone' para clonar el repositorio alojado en GitLab 
-luego lo modifica y actualiza en GitLab los cambios hechos con un 'push' pero esto no
-tiene repercucion en el clon alojado en nuestro repositorio local por lo que luego de
-actualizar el repositorio alojado en GitHub deberiamos actualizar tambien nuesto clon. Para
-realizar todo esto voy a crear primero una carpeta auxiliar llamada PaginaClienteAux
-desde ahi clonare el repositorio que se aloja en GitHub, luego regresare a la carpeta 
-PaginaCliente modificare desde ahi el README.txt, hago el 'add' y el 'commit' correspondiente
-aplicare 'push' sobre la rama principal actualizando asi al repositorio alojado en GitHub 
-(todo esto desde la carpeta PaginaCliente) acto seguido me movere
-a la carpeta auxiliar 
-desde la cual ejecutare 'pull' lo cual deberia actualizar el archivo
-README.txt de mi clon 
-alojado en la carpeta auxiliar.
+
+
+11) y 12) El inciso anterior se ocupo de copiar todo nuestro repositorio local
+en el repositorio ubicado en GitHub (repositorio fijo), ahora lo que debemos
+hacer es clonar dicho repositorio. En los tutoriales el muchacho usa el subcomando
+'clone' para clonar su repositorio alojado en GitLab, luego trabaja en el y actualiza
+en GitLab los cambios hechos con un 'push' pero esto no tiene repercucion en el
+clon, por lo que luego de actualizar mi 'repositorio fijo' debo actualizar
+tambien nuesto clon. Para realizar todo esto voy a crear primero una carpeta auxiliar
+llamada "PaginaClienteAux" desde ella clonare el 'repositorio fijo', luego regresare
+a la carpeta "PaginaCliente" modificare desde ahi el README.txt, haciendo el 'add' y
+el 'commit' correspondiente, aplicare 'push' sobre la rama principal actualizando asi
+mi 'repositorio fijo' (todo esto desde la carpeta "PaginaCliente") acto seguido me
+movere a la carpeta auxiliar desde la cual ejecutare 'pull' esto deberia actualizar
+el archivo README.txt en mi clon alojado en "PaginaClienteAux".
+Muestro la salida de consola del proceso:
+
+* primero creo el clon en "PaginaClienteAux"
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+        $ cd  ~/Proyectos/PaginaClienteAux
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux (master)
+       $ git remote add origin https://github.com/argntoUNSA/PaginaCliente.git
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux (master)
+       $ git clone https://github.com/argntoUNSA/PaginaCliente.git
+       Cloning into 'PaginaCliente'...
+       remote: Enumerating objects: 67, done.
+       remote: Counting objects: 100% (67/67), done.
+       remote: Compressing objects: 100% (34/34), done.
+       remote: Total 67 (delta 31), reused 67 (delta 31), pack-reused 0
+       Receiving objects: 100% (67/67), 165.26 KiB | 50.00 KiB/s, done.
+       Resolving deltas: 100% (31/31), done.
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux (master)
+       $ ls
+       PaginaCliente/
+
+
+* vuelvo a "PaginaCliente", modifico un archivo README.txt y actualizo el 'repositorio
+fijo'.
+
+
+         cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux (master)
+        $ cd  ~/Proyectos/PaginaCliente
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+       $ vim README.txt
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+       $ git add README.txt
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+       $ git commit
+       [master f85639a] Actualizacion de README.txt
+        1 file changed, 77 insertions(+), 3 deletions(-)
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+       $ git push origin master
+       Enumerating objects: 5, done.
+       Counting objects: 100% (5/5), done.
+       Delta compression using up to 2 threads
+       Compressing objects: 100% (3/3), done.
+       Writing objects: 100% (3/3), 2.46 KiB | 279.00 KiB/s, done.
+       Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+       remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+       To https://github.com/argntoUNSA/PaginaCliente.git
+          a534d9e..f85639a  master -> master
+
+* Nuevamente nos vamos al clon alojado en "PaginaClienteAux" y ejecutamos el comando
+'pull' para actualizar nuestro clon.
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
+       $ cd ~/Proyectos/PaginaClienteAux/PaginaCliente
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux/PaginaCliente (master)
+       $ git pull
+       remote: Enumerating objects: 5, done.
+       remote: Counting objects: 100% (5/5), done.
+       remote: Compressing objects: 100% (1/1), done.
+       remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+       Unpacking objects: 100% (3/3), 2.44 KiB | 4.00 KiB/s, done.
+       From https://github.com/argntoUNSA/PaginaCliente
+          a534d9e..f85639a  master     -> origin/master
+       Updating a534d9e..f85639a
+       Fast-forward
+        README.txt | 80 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+        1 file changed, 77 insertions(+), 3 deletions(-)
+
+* Apmpliando el funcionamiento de pull, observamos que primero se verifica que cambios hay
+y sigue con una fusion. El chico nos informa que un 'pull' equivale a un 'fecht' seguido de
+un checkout para poder fusionar mi clon y el 'repositorio fijo' si es que hay diferencias
+obviamente.
+
+        cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux/PaginaCliente (master)
+        $ git fecht
+       remote: Enumerating objects: 5, done.
+        remote: Counting objects: 100% (5/5), done.
+        remote: Compressing objects: 100% (1/1), done.
+        remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+        Unpacking objects: 100% (3/3), 2.44 KiB | 4.00 KiB/s, done.
+        From https://github.com/argntoUNSA/PaginaCliente
+           a534d9e..f85639a  master     -> origin/master
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux/PaginaCliente (master)
+        $ git checkout a534d9e
+       Switched to branch 'a534d9e'
+
+       cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux/PaginaCliente (a534d9e)
+        $ git merge f85639a
+        Updating a534d9e..f85639a
+       Fast-forward
+         README.txt | 80 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+         1 file changed, 77 insertions(+), 3 deletions(-)
 
 
 
@@ -191,6 +291,12 @@ aun no lo este, en algunas versiones funciona como el comando 'restore'
                 -b <nombre de la rama> : Crea una nueva rama, con el nombre indicado y se
                                         mueve hacia ella.
 
+clone : Este comando nos permite clonar un repositorio externo, esterepositorio nos puede
+servir como un backup de nuestro trabajo.
+       parametros:
+               <direccion del remoto> : clona en la carpeta actual nuestro repositorio
+ubicado en la direccion indicada.
+
 commit : Nos sirve para actualizar nuestro repositor local, con los datos alojados en
 el Stage por defecto sube todos los archivos.
         parametros:
@@ -208,7 +314,15 @@ de trabajo y en el Stage.
                 HEAD : Compara los archivos que estan apuntados por HEAD y los que estan en
                         el Stage luego nos muestra las diferencias.
 		HEAD-num , num = 1...n con n natural : Podra comparar HEAD con alguno anterior
-                                                        y mostrarnos las diferencias.
+							y mostrarnos las diferencias.
+
+flecht : Nos permite ver que cambios se profujeron en el 'repositorio fijo' respecto al
+clon (del 'repositorio fijo'), previamente creado.
+       parametros:
+               <> : Nos informa los archivos modificados.
+
+
+
 init: Sirve para poder iniciar un repositorio local vacio.
         parametros:
 		<> : inicia un repositorio local vacio;
@@ -242,6 +356,15 @@ mv : Mueve y renombra archivos
                 <nombre viejo>...<nombre nuevo> : cambia el nombre del archivo
                 <nombre viejo>...<lugar nuevo/nombre nuevo> : mueve el archivo
 
+
+pull : Nos permite actualizar nuestro clon del 'repositorio fijo' previamente clonado
+tras verificar que archivos son los que se deben actualizar. luego de esto procede
+a fusionar dos ramas:
+        * una contiene el clon del 'repositorio fijo'.
+        * la otra contiene el estado actual del 'repositorio fijo'.
+Asi no debemos clonarlo cada vez que se realice un cambio.
+       parametros:
+               <> : Actualiza nuestro clon del 'repositorio fijo'.
 
 push : nos permite enviar a nuestro repositorio fijo, todos los cambios realizados en
 el repositorio local. Previamente se debe habilitar la conexion y debe existir el repositorio
