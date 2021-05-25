@@ -248,3 +248,31 @@ obviamente.
        Fast-forward
          README.txt | 80 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
          1 file changed, 77 insertions(+), 3 deletions(-)
+
+
+13) En el inciso anterior hicimos 2 intentos de push y pull simultaneo, uno de los
+problemas que tuve fue intentar hacer 'push' desde 2 repositorios locales diferentes
+('repositori 1' y 'repositorio 2'). Luego de realizar el primer 'push' desde 'repositorio 1'
+intente reañlizar el 2do desde 'repositorio 2', justo entonces se me pidio que antes 
+de realizar esa operacion deberia actualizar mi 'repositiorio 1' ya que aun no tenia 
+el archivo creado y 'pusheado' desde mi 'repositorio 1'. Entonces no pude hacer 'push'
+sin antes hacer 'pull', ademas estuve editando la carpeta .git lo cual me trajo problemas
+que no pude solucionar mas que con un clone. Los ultimos cambios que realice fueron 
+la creacion y edicion de los archivos README.md, TPN32021.txt y Glosario.txt los cuales son 4:
+	* Renombrar a README.txt -> TPN32021.txt y agregarle desarrollo del inciso 11 y 12.
+
+	* Eliminacion de Glosario en TPN32021.txt .
+
+	* Ceracion de archivo Glosario.txt .
+
+	* Modificacion de TPN32021.txt y Glosario.txt, agregandole desarrollo de inciso 13 y
+	el comando 'rebase' respectivamente.
+todos estos cambios no fueron en la misma rama, si no mas bien los primeros 2 y el ultimo
+en la rama 'master' y el tercero en la rama 'feature-caracteristicas', lo relice de esta
+manera simulando la situacion presentada en el tutorial. todo esto con la necesidad de 
+aplicar y ver como funciona el comando 'rebase' el cual trabajaria de forma distinta que 
+un simple 'pull'. 'rebase' es un comando destructivo, destruye el historial de tal manera
+que todos los commits queden ordenados segun la fecha de realizacion, no se almacenan las
+bifurcaciones, si no que se pone un commit sobre otro commit generando asi un nuevo historial. 
+Debemos usarlo cuidadosamente, pues aunque destruya nuestro historial nos permite hacer
+este tipo de trabajo sgenerar fusiones o commits innecesarios.
