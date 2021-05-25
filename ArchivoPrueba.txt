@@ -1,0 +1,3 @@
+Archivo de Prueba nro 1, este se hace desde:
+	Proyectos/PaginaClienteAux/PaginaCliente
+
