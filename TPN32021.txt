@@ -257,7 +257,7 @@ intente reañlizar el 2do desde 'repositorio 2', justo entonces se me pidio que 
 de realizar esa operacion deberia actualizar mi 'repositiorio 1' ya que aun no tenia 
 el archivo creado y 'pusheado' desde mi 'repositorio 1'. Entonces no pude hacer 'push'
 sin antes hacer 'pull', ademas estuve editando la carpeta .git lo cual me trajo problemas
-que no pude solucionar mas que con un clone. Los ultimos cambios que realice fueron 
+que no pude solucionar mas que con un 'clone'. Los ultimos cambios que realice fueron 
 la creacion y edicion de los archivos README.md, TPN32021.txt y Glosario.txt los cuales son 4:
 	* Renombrar a README.txt -> TPN32021.txt y agregarle desarrollo del inciso 11 y 12.
 
@@ -271,8 +271,20 @@ todos estos cambios no fueron en la misma rama, si no mas bien los primeros 2 y 
 en la rama 'master' y el tercero en la rama 'feature-caracteristicas', lo relice de esta
 manera simulando la situacion presentada en el tutorial. todo esto con la necesidad de 
 aplicar y ver como funciona el comando 'rebase' el cual trabajaria de forma distinta que 
-un simple 'pull'. 'rebase' es un comando destructivo, destruye el historial de tal manera
+un simple 'merge'. 'rebase' es un comando destructivo, destruye el historial de tal manera
 que todos los commits queden ordenados segun la fecha de realizacion, no se almacenan las
-bifurcaciones, si no que se pone un commit sobre otro commit generando asi un nuevo historial. 
-Debemos usarlo cuidadosamente, pues aunque destruya nuestro historial nos permite hacer
-este tipo de trabajo sgenerar fusiones o commits innecesarios.
+bifurcaciones, si no que se pone un commit sobre otro generando asi un nuevo historial. 
+Debemos usarlo cuidadosamente, pues aunque reescribes nuestro historial nos permite hacer
+este tipo de trabajo sin generar fusiones o commits innecesarios. 
+Para usarlo debemos posicionarnos en la rama "mas alta" y ejecutar el comando:
+	git rebase <rama inferior>
+lo cual iniciaria el proceso enunciado y lo delimitaria por esas 2 ramas.
+
+Aclaracion: En lo dicho respecto a la carpeta .git se me crearon problemas pues elimine
+manualmente un remoto. Con respecto al video nro 21 y 22 los ejecutare al reves, primero
+aplicare 'rebase' a los cambios A, B y C donde fueron creados README.md, TPN32021.txt y
+Glosario.txt, y eliminamos a README.txt. Seguido enviare ('push') lo trabajado, ire 
+a mi 'repositorio2' y lo actualizare ('pull') , pero junto con el comando:
+	git pull --rebase <remoto> <rama del remoto>
+
+
