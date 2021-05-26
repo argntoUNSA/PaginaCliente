@@ -107,17 +107,30 @@ a fusionar dos ramas:
 Asi no debemos clonarlo cada vez que se realice un cambio.
        parametros:
                <> : Actualiza nuestro clon del 'repositorio fijo'.
-
-push : nos permite enviar a nuestro repositorio fijo, todos los cambios realizados en
+		--rebase <remoto><rama>: Actualiza de tal manera que no necesita crear
+			commits innecesarios. Es un comando destructivo porque reescribe 
+			el historial, pero es adecuado para mantener en orden el trabajo.
+		
+push : nos permite enviar a nuestro 'repositorio fijo', todos los cambios realizados en
 el repositorio local. Previamente se debe habilitar la conexion y debe existir el repositorio
 de destino.
         parametros:
-                <nombreR><nombreA> : Envia el archivo llamado "nombreA" hacia el
-                                repositorio llamado "NombreR", el cual fue creado
+		<> : Envia nuestro trabajo completo hacia el 'repositorio fijo'.
+                <nombreRE><nombreRA> : Envia la rama llamada "nombreRA" hacia el
+                                repositorio llamado "NombreRE", el cual fue creado
                                 previamente a este paso.
                 --all <nombreR> : Envia todo lo que se almacena en este repositorio local, se le
                                 debe indicar el nombre del repositorio de destino.
 
+rebase : Su funcion consiste en fusionar dos ramas pero sin necesidad de crear otro commit.
+Esto es logrado al reacomodar los commits realizados entre ciertos momentos, lo cual nos brinda
+un ordenamiento visual en nuestro historial , pero nos quita informacion importante, como por
+ejemplo el desarrollo en ramas y sus respectivas fusioes. Este es un comando destructivo 
+ya que reescribe el historial, se debe manejar con precaucion en momentos de trabajo 
+en equipo.
+	parametros:
+		<NombreRA> : Realiza el proceso de reordenamiento desde la rama actual
+			hasta la rama llamada 'nombreRA'
 
 remote : Nos facilita la creacion y la comunicacion con los remotos, hay que
 tener en cuenta que un remoto no es mas que un repositorio al que podemos tener o no
