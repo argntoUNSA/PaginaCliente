@@ -1,47 +1,17 @@
-﻿1) GIT es uno de los sistemas de control de versiones mas usados actualmente
-gracias a que es muy sencillo e intuitivo de usar (aun asi hace falta practica)
-podremos trabajar de forma paralela en versiones que aun no sabemos si se uniran al 
-proyecto principal.
-Un Sistema de Control de Versiones es una herramienta para almacenar versiones.
-Basicaamente estas se pueden usar para trabajar en paralelo, que nos permitiria depurar
-errores mas facilmente.
+﻿					TPN3 - IDSL 2021 - Franco Cristian
 
-2) Instale una version para windows de gitBash espero no tener inconvenientes al
-utilizar esta aplicacion y tener que trabajas sobre unn repositorio en gitHub.
 
-3) Inicie el proyecto siguiendo los pasos del tutorial, cree una carpeta llamada 
-Proyectos, dentro de ella una llamada PaginaCliente y en ella aplique el comando init
-lo cual significa que inicie mi repositorio local.
+1) GIT es uno de los sistemas de control de versiones mas usados actualmente gracias a que es muy sencillo e intuitivo de usar (aun asi hace falta practica) podremos trabajar de forma paralela en versiones que aun no sabemos si se uniran al proyecto principal. Un Sistema de Control de Versiones es una herramienta para almacenar versiones. Basicaamente estas se pueden usar para trabajar en paralelo, que nos permitiria depurar errores mas facilmente.
 
-4) Al seguir los mismos pasos aprendi mas subcomandos como add, restore y commit.
-Los cuales me ayudan a modificar mi archivo antes de actualizar mi repositorio local.
-Tambien vimos como dar un paso hacia atras en una situacion de comentar erroneamente 
-un commit, esto es con el parametro --amend.
+2) Instale una version para windows de gitBash espero no tener inconvenientes al utilizar esta aplicacion y tener que trabajas sobre unn repositorio en gitHub.
 
-5) Pudimos actualizar la pagina con el uso de una plantilla. La cual nos ayudo
-muchisimo, reduciendo el tiempo invertido de codigo, aportando buena estetica y
-experiencias adquiridas, espero a ustedes tambien les sirva. Aprendimos tambien a
-corregir errores o aplicar cambios regresando los archivos puestos en el Stage
-o inclusive commits hechos, esto gracias a los subcomandos retore, reset y revert
-reset es un subcomando destructivo ya que es capaz de eliminar los commits
-que le indiquemos, sin poder recuperar los archivos conntenidos luego, revert en
-cambio nos permite regresar los archivos de nuestro commit al Stage aplicarles
-las modificaciones que nos parecen necesartias y luego proceder a aplicar commit
-sobre el archivo modificado.
+3) Inicie el proyecto siguiendo los pasos del tutorial, cree una carpeta llamada Proyectos, dentro de ella una llamada PaginaCliente y en ella aplique el comando init lo cual significa que inicie mi repositorio local.
 
-6) Usamos ramas para poder trabajar en paralelo, es decir desde un punto del proyecto
-principal (raiz), desarrollar un proyecto paralelo (rama) sin afectar al primero. Esto
-nos permite, por ejemplo, que a partir de un commit que este fallando podamos desarrollar
-la solucion y luego integrar esa solucion al proyecto, otros ejemplos podrian ser hacer
-un cambio que nos hayan informado, realizar mejoras, etc . El subcomando 'branch' nos permitira
-ver la lista de ramas, crear ramas nuevas, examinar las que hay, borrar ramas y
-renombrarlas. Las ramas tienen repositorios incdividuales y de forma paralela, los
-archivos que no esten preparados para el commit no se almacenan durante el desarrollo
-de esta ramaa. Tambien note que si modifico mis archivos sin usar la consola, no habria
-problemas, ya que git lo tomaria como un cambio que se le hizo al archivo almacenado en
-el espacio de trabajo , comento esto porque cuadno quiero trabajar con ramas en mi
-caso quise cambiarle de logo a mi pagina, entonces probe mover una imagen desde el 
-espacio de trabajo hacia la carpeta style, para ello inserte el comando :
+4) Al seguir los mismos pasos aprendi mas subcomandos como add, restore y commit. Los cuales me ayudan a modificar mi archivo antes de actualizar mi repositorio local. Tambien vimos como dar un paso hacia atras en una situacion de comentar erroneamente un commit, esto es con el parametro --amend.
+
+5) Pudimos actualizar la pagina con el uso de una plantilla. La cual nos ayudo muchisimo, reduciendo el tiempo invertido de codigo, aportando buena estetica y experiencias adquiridas, espero a ustedes tambien les sirva. Aprendimos tambien a corregir errores o aplicar cambios regresando los archivos puestos en el Stage o inclusive commits hechos, esto gracias a los subcomandos retore, reset y revert reset es un subcomando destructivo ya que es capaz de eliminar los commits que le indiquemos, sin poder recuperar los archivos conntenidos luego, revert en cambio nos permite regresar los archivos de nuestro commit al Stage aplicarles las modificaciones que nos parecen necesartias y luego proceder a aplicar commit sobre el archivo modificado.
+
+6) Usamos ramas para poder trabajar en paralelo, es decir desde un punto del proyecto principal (raiz), desarrollar un proyecto paralelo (rama) sin afectar al primero. Esto nos permite, por ejemplo, que a partir de un commit que este fallando podamos desarrollar la solucion y luego integrar esa solucion al proyecto, otros ejemplos podrian ser hacer un cambio que nos hayan informado, realizar mejoras, etc . El subcomando 'branch' nos permitira ver la lista de ramas, crear ramas nuevas, examinar las que hay, borrar ramas y renombrarlas. Las ramas tienen repositorios incdividuales y de forma paralela, los archivos que no esten preparados para el commit no se almacenan durante el desarrollo de esta ramaa. Tambien note que si modifico mis archivos sin usar la consola, no habria problemas, ya que git lo tomaria como un cambio que se le hizo al archivo almacenado en el espacio de trabajo , comento esto porque cuadno quiero trabajar con ramas en mi caso quise cambiarle de logo a mi pagina, entonces probe mover una imagen desde el espacio de trabajo hacia la carpeta style, para ello inserte el comando :
 
 git mv logo.jpg style/logo.jpg
 
@@ -49,22 +19,7 @@ y por mas que intentaba variar el nombre o intercambiarlos siempre tenia la sigu
 
 fatal : 
 
-7) Uso de merge y conflictos: es necesario el uso de merge ya que si se ramifica
-nuestro proyecto, podriamos desear volverlos a alojar dentro de la rama principal
-para esto es que usamos merge. En nuestro caso hemos creado 2 ramas llamadas auxiliar
-y auxiliar2, en una actualizamos los archivos README.txt e index.html, en la otra modifique
-tambien el README.txt pero de otra manera, asi cuando vayamos a mezclar o fusionar
-las ramas podamos ver si surgen conflictos y ver tambien como solucionarlo. Existen 3
-formas de mezclar: La primera llamada fast-foward la cual surge a partir de 2 ramas
-que no tienen archivos comunes editados. La segunda, estrategia recfursiva, surge cuando
-debemos mezclar los cambios efectuados, sabiendo que los mismos no son con respecto a un
-mismo archivo sobre la misma linea, este metodo agreaga y quita en uno lo que se agrego y
-se quito en el otro, todo esto se guarda en un nuevo commit. La 3era manera, mezcla con
-conflicto, nos intentara fusionar por medio del 2do metodo nuestras ramas, pero encontrara
-un mismo archivo modificado sobre una misma linea y nos permitira editar ese archivo para
-asi poder resolver dicho conflicto. Hare un merge sin conflicto y otro con uno. primero 
-mezclo master con auxiliar y vemos que no genera conflicto, luego master con auxiliar 2 y 
-vemos que nos genera un conflicto en el archivo README.txt 
+7) Uso de merge y conflictos: es necesario el uso de merge ya que si se ramifica nuestro proyecto, podriamos desear volverlos a alojar dentro de la rama principal para esto es que usamos merge. En nuestro caso hemos creado 2 ramas llamadas auxiliar y auxiliar2, en una actualizamos los archivos README.txt e index.html, en la otra modifique tambien el README.txt pero de otra manera, asi cuando vayamos a mezclar o fusionar las ramas podamos ver si surgen conflictos y ver tambien como solucionarlo. Existen 3 formas de mezclar: La primera llamada fast-foward la cual surge a partir de 2 ramas que no tienen archivos comunes editados. La segunda, estrategia recfursiva, surge cuando debemos mezclar los cambios efectuados, sabiendo que los mismos no son con respecto a un mismo archivo sobre la misma linea, este metodo agreaga y quita en uno lo que se agrego y se quito en el otro, todo esto se guarda en un nuevo commit. La 3era manera, mezcla con conflicto, nos intentara fusionar por medio del 2do metodo nuestras ramas, pero encontrara un mismo archivo modificado sobre una misma linea y nos permitira editar ese archivo para asi poder resolver dicho conflicto. Hare un merge sin conflicto y otro con uno. primero mezclo master con auxiliar y vemos que no genera conflicto, luego master con auxiliar 2 y vemos que nos genera un conflicto en el archivo README.txt 
 
 salida al primer merge: 
 	cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
@@ -82,37 +37,15 @@ salida del segundo merge:
 	CONFLICT (content): Merge conflict in README.txt
 	Automatic merge failed; fix conflicts and then commit the result.
 
-Haremos otras 2 ramas y las fusiones correspondientes siguiendo asi el tutorial y adquiriendo
-experiencia sobre el tema.
+Haremos otras 2 ramas y las fusiones correspondientes siguiendo asi el tutorial y adquiriendo experiencia sobre el tema.
 
-8) Cambiar de rama para trabajar en un codigo anterior, puede ocasionar perdidas en 
-el actual. El subcomando 'stash' sirve para emergencias de este tipo. En mi caso 
-estare simulando una modificacion al orden del Glosario en README.txt y la notificacion
-del cliente el cual me pide que retorne la imagen antigua en su pagina. Segun el 
-funcionamiento de 'stash' podemos guardar nuestro espacio de trabajo(creo que en el
-repositorio local), limpiandolo en tiempo real permitiendo asi poder ramificar,
-trabajar, terminar y quizas fusionar para poder asi continuar la edicion de README.txt.
-Segun la informacion de stash, los WorkSpace se guardan en una pila y mediante el subcomando
-'àpply' aplicara el tope de la pila. Luego de obtenerlo se deberia quitar ya que al
-parecer quedan apilados, con el subcomando'drop' se lo podra quitar de la. Para hacer 
-ambas al mismo tiempo se utiliza el subcomando 'pop'.
+8) Cambiar de rama para trabajar en un codigo anterior, puede ocasionar perdidas en el actual. El subcomando 'stash' sirve para emergencias de este tipo. En mi caso estare simulando una modificacion al orden del Glosario en README.txt y la notificacion del cliente el cual me pide que retorne la imagen antigua en su pagina. Segun el funcionamiento de 'stash' podemos guardar nuestro espacio de trabajo(creo que en el repositorio local), limpiandolo en tiempo real permitiendo asi poder ramificar, trabajar, terminar y quizas fusionar para poder asi continuar la edicion de README.txt. Segun la informacion de stash, los WorkSpace se guardan en una pila y mediante el subcomando 'àpply' aplicara el tope de la pila. Luego de obtenerlo se deberia quitar ya que al parecer quedan apilados, con el subcomando'drop' se lo podra quitar de la. Para hacer ambas al mismo tiempo se utiliza el subcomando 'pop'.
 
-9) Los remotos son repositorios distribuidos con los que puedo actualizar mi repositorio 
-local, ellos pueden estar dentro y fuera de nuestra red, e incluso de nuestras 
-computadoras. tambien son los que nos permitira trabajar en grupo para el TP4 o en si para
-la vida laboral. En git podemos crear un repositorio fijo asi podriamos acceder al programa
-a partir de un repositorio local, git no tiene nocion de servidores centrales mas 
-bien nos ve como un conjunto de nodos que se comunican entre si, por lo que nos da la
-oportunidad de tenr uno central, que puede llegar a funcionar como backup. En git tenemos un 
-comando llamado 'remote' que nos permitira agregar remotos u operaciones como 'pull' para 
-recibir informacion del remoto y 'push' para enviar informacion al remoto. 
+9) Los remotos son repositorios distribuidos con los que puedo actualizar mi repositorio local, ellos pueden estar dentro y fuera de nuestra red, e incluso de nuestras computadoras. tambien son los que nos permitira trabajar en grupo para el TP4 o en si para la vida laboral. En git podemos crear un repositorio fijo asi podriamos acceder al programa a partir de un repositorio local, git no tiene nocion de servidores centrales mas bien nos ve como un conjunto de nodos que se comunican entre si, por lo que nos da la oportunidad de tenr uno central, que puede llegar a funcionar como backup. En git tenemos un comando llamado 'remote' que nos permitira agregar remotos u operaciones como 'pull' para recibir informacion del remoto y 'push' para enviar informacion al remoto. 
 
-10) Para este inciso
-cree un ropositorio en github, es publico y la direccion es: 
+10) Para este inciso cree un ropositorio en github, es publico y la direccion es: 
 	https://github.com/argntoUNSA/PaginaCliente.git
-Luego habilitaremos nuestra conexion y subire todo mi preyecto, esto se reealiza con
-el comando 'add' de 'remoto'. Despues con 'push' podre subir mi raiz master asi
-almacenare nuestro programa, la salida de esos comandos son:
+Luego habilitaremos nuestra conexion y subire todo mi preyecto, esto se reealiza conel comando 'add' de 'remoto'. Despues con 'push' podre subir mi raiz master asi almacenare nuestro programa, la salida de esos comandos son:
 
 	cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
 	$ git remote add origin https://github.com/argntoUNSA/PaginaCliente.git
@@ -135,19 +68,7 @@ almacenare nuestro programa, la salida de esos comandos son:
 
 
 
-11) y 12) El inciso anterior se ocupo de copiar todo nuestro repositorio local
-en el repositorio ubicado en GitHub (repositorio fijo), ahora lo que debemos
-hacer es clonar dicho repositorio. En los tutoriales el muchacho usa el subcomando
-'clone' para clonar su repositorio alojado en GitLab, luego trabaja en el y actualiza
-en GitLab los cambios hechos con un 'push' pero esto no tiene repercucion en el
-clon, por lo que luego de actualizar mi 'repositorio fijo' debo actualizar
-tambien nuesto clon. Para realizar todo esto voy a crear primero una carpeta auxiliar
-llamada "PaginaClienteAux" desde ella clonare el 'repositorio fijo', luego regresare
-a la carpeta "PaginaCliente" modificare desde ahi el README.txt, haciendo el 'add' y
-el 'commit' correspondiente, aplicare 'push' sobre la rama principal actualizando asi
-mi 'repositorio fijo' (todo esto desde la carpeta "PaginaCliente") acto seguido me
-movere a la carpeta auxiliar desde la cual ejecutare 'pull' esto deberia actualizar
-el archivo README.txt en mi clon alojado en "PaginaClienteAux".
+11) y 12) El inciso anterior se ocupo de copiar todo nuestro repositorio local en el repositorio ubicado en GitHub (repositorio fijo), ahora lo que debemos hacer es clonar dicho repositorio. En los tutoriales el muchacho usa el subcomando 'clone' para clonar su repositorio alojado en GitLab, luego trabaja en el y actualiza en GitLab los cambios hechos con un 'push' pero esto no tiene repercucion en el clon, por lo que luego de actualizar mi 'repositorio fijo' debo actualizar tambien nuesto clon. Para realizar todo esto voy a crear primero una carpeta auxiliar llamada "PaginaClienteAux" desde ella clonare el 'repositorio fijo', luego regresare a la carpeta "PaginaCliente" modificare desde ahi el README.txt, haciendo el 'add' y el 'commit' correspondiente, aplicare 'push' sobre la rama principal actualizando asi mi 'repositorio fijo' (todo esto desde la carpeta "PaginaCliente") acto seguido me movere a la carpeta auxiliar desde la cual ejecutare 'pull' esto deberia actualizar el archivo README.txt en mi clon alojado en "PaginaClienteAux".
 Muestro la salida de consola del proceso:
 
 * primero creo el clon en "PaginaClienteAux"
@@ -173,8 +94,7 @@ Muestro la salida de consola del proceso:
        PaginaCliente/
 
 
-* vuelvo a "PaginaCliente", modifico un archivo README.txt y actualizo el 'repositorio
-fijo'.
+* vuelvo a "PaginaCliente", modifico un archivo README.txt y actualizo el 'repositorio fijo'.
 
 
          cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux (master)
@@ -203,8 +123,7 @@ fijo'.
        To https://github.com/argntoUNSA/PaginaCliente.git
           a534d9e..f85639a  master -> master
 
-* Nuevamente nos vamos al clon alojado en "PaginaClienteAux" y ejecutamos el comando
-'pull' para actualizar nuestro clon.
+* Nuevamente nos vamos al clon alojado en "PaginaClienteAux" y ejecutamos el comando 'pull' para actualizar nuestro clon.
 
        cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaCliente (master)
        $ cd ~/Proyectos/PaginaClienteAux/PaginaCliente
@@ -223,10 +142,7 @@ fijo'.
         README.txt | 80 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
         1 file changed, 77 insertions(+), 3 deletions(-)
 
-* Apmpliando el funcionamiento de pull, observamos que primero se verifica que cambios hay
-y sigue con una fusion. El chico nos informa que un 'pull' equivale a un 'fecht' seguido de
-un checkout para poder fusionar mi clon y el 'repositorio fijo' si es que hay diferencias
-obviamente.
+* Apmpliando el funcionamiento de pull, observamos que primero se verifica que cambios hay y sigue con una fusion. El chico nos informa que un 'pull' equivale a un 'fecht' seguido de un checkout para poder fusionar mi clon y el 'repositorio fijo' si es que hay diferencias obviamente.
 
         cristian@PCArGNtO MINGW32 ~/Proyectos/PaginaClienteAux/PaginaCliente (master)
         $ git fecht
@@ -250,15 +166,7 @@ obviamente.
          1 file changed, 77 insertions(+), 3 deletions(-)
 
 
-13) En el inciso anterior hicimos 2 intentos de push y pull simultaneo, uno de los
-problemas que tuve fue intentar hacer 'push' desde 2 repositorios locales diferentes
-('repositori 1' y 'repositorio 2'). Luego de realizar el primer 'push' desde 'repositorio 1'
-intente reañlizar el 2do desde 'repositorio 2', justo entonces se me pidio que antes 
-de realizar esa operacion deberia actualizar mi 'repositiorio 1' ya que aun no tenia 
-el archivo creado y 'pusheado' desde mi 'repositorio 1'. Entonces no pude hacer 'push'
-sin antes hacer 'pull', ademas estuve editando la carpeta .git lo cual me trajo problemas
-que no pude solucionar mas que con un 'clone'. Los ultimos cambios que realice fueron 
-la creacion y edicion de los archivos README.md, TPN32021.txt y Glosario.txt los cuales son 4:
+13) En el inciso anterior hicimos 2 intentos de push y pull simultaneo, uno de los problemas que tuve fue intentar hacer 'push' desde 2 repositorios locales diferentes ('repositori 1' y 'repositorio 2'). Luego de realizar el primer 'push' desde 'repositorio 1' intente reañlizar el 2do desde 'repositorio 2', justo entonces se me pidio que antes de realizar esa operacion deberia actualizar mi 'repositiorio 1' ya que aun no tenia el archivo creado y 'pusheado' desde mi 'repositorio 1'. Entonces no pude hacer 'push' sin antes hacer 'pull', ademas estuve editando la carpeta .git lo cual me trajo problemas que no pude solucionar mas que con un 'clone'. Los ultimos cambios que realice fueron la creacion y edicion de los archivos README.md, TPN32021.txt y Glosario.txt los cuales son 4:
 	* Renombrar a README.txt -> TPN32021.txt y agregarle desarrollo del inciso 11 y 12.
 
 	* Eliminacion de Glosario en TPN32021.txt .
@@ -267,24 +175,12 @@ la creacion y edicion de los archivos README.md, TPN32021.txt y Glosario.txt los
 
 	* Modificacion de TPN32021.txt y Glosario.txt, agregandole desarrollo de inciso 13 y
 	el comando 'rebase' respectivamente.
-todos estos cambios no fueron en la misma rama, si no mas bien los primeros 2 y el ultimo
-en la rama 'master' y el tercero en la rama 'feature-caracteristicas', lo relice de esta
-manera simulando la situacion presentada en el tutorial. todo esto con la necesidad de 
-aplicar y ver como funciona el comando 'rebase' el cual trabajaria de forma distinta que 
-un simple 'merge'. 'rebase' es un comando destructivo, destruye el historial de tal manera
-que todos los commits queden ordenados segun la fecha de realizacion, no se almacenan las
-bifurcaciones, si no que se pone un commit sobre otro generando asi un nuevo historial. 
-Debemos usarlo cuidadosamente, pues aunque reescribes nuestro historial nos permite hacer
-este tipo de trabajo sin generar fusiones o commits innecesarios. 
+Todos estos cambios no fueron en la misma rama, si no mas bien los primeros 2 y el ultimo en la rama 'master' y el tercero en la rama 'feature-caracteristicas', lo relice de esta manera simulando la situacion presentada en el tutorial. todo esto con la necesidad de aplicar y ver como funciona el comando 'rebase' el cual trabajaria de forma distinta que un simple 'merge'. 'rebase' es un comando destructivo, destruye el historial de tal manera que todos los commits queden ordenados segun la fecha de realizacion, no se almacenan las bifurcaciones, si no que se pone un commit sobre otro generando asi un nuevo historial. Debemos usarlo cuidadosamente, pues aunque reescribes nuestro historial nos permite hacer este tipo de trabajo sin generar fusiones o commits innecesarios. 
 Para usarlo debemos posicionarnos en la rama "mas alta" y ejecutar el comando:
 	git rebase <rama inferior>
 lo cual iniciaria el proceso enunciado y lo delimitaria por esas 2 ramas.
 
-Aclaracion: En lo dicho respecto a la carpeta .git se me crearon problemas pues elimine
-manualmente un remoto. Con respecto al video nro 21 y 22 los ejecutare al reves, primero
-aplicare 'rebase' a los cambios A, B y C donde fueron creados README.md, TPN32021.txt y
-Glosario.txt, y eliminamos a README.txt. Seguido enviare ('push') lo trabajado, ire 
-a mi 'repositorio2' y lo actualizare ('pull') , pero junto con el comando:
+Aclaracion: En lo dicho respecto a la carpeta .git se me crearon problemas pues elimine manualmente un remoto. Con respecto al video nro 21 y 22 los ejecutare al reves, primero aplicare 'rebase' a los cambios A, B y C donde fueron creados README.md, TPN32021.txt y Glosario.txt, y eliminamos a README.txt. Seguido enviare ('push') lo trabajado, ire a mi 'repositorio2' y lo actualizare ('pull') , pero junto con el comando:
 	git pull --rebase <remoto> <rama del remoto>
 
-
+14) En este punto aprendemos a usar el paramtro -i del subcomando 'rebase' el cual me permitira editar la reorganizacion de mis commits pero recordando que este tipo de accion crearia problemas en un entorno compartido, por lo tanto (segun entiendo) podre usarlo de forma segura si mi trabajo es local o si no lo es, sera seguro siempre que no afecte al commit raiz de mi rama actual de trabajo ni a los commits anttecesores de esa raiz. Con rebase interactivo podemos eliminar, renombrar, unir y reordenar los commits de nuestro proyecto, lo cual es util cuando queremos organizar nuestros cambios del proyecto, pero hay que aclarar que no debemos realizar ningun cambio sobre commits ya 'pusheados' porque traeria problemas en la comunicacion de remotos. Por lo tanto debe ejecutarse el subcomando 'rebase' o 'rebase interactivo' dentro de una rama local la cual luego se uniria al proyecto (por medio de 'pull' y 'push') sin afectar a los que aun no recibieron las actualizaciones y estan realizando otros trabajos  

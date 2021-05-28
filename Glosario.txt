@@ -3,8 +3,7 @@ GLOSARIO de subcomandos del comando git:
 
 
 
-add: Agrega archivos desde nuestro escenario de trabajo al stage preparandolos asi para
-ser enviados al repositorio actual.
+add: Agrega archivos desde nuestro escenario de trabajo al stage preparandolos asi para ser enviados al repositorio actual.
         parametros:
                 . : Agrega todos los archivos.
                 <nombre del archivo> : Agrega solo el archivo nombrado.
@@ -27,26 +26,22 @@ branch : nos permite enlistar, crear, renombrar y borrar ramas
 
 
 
-checkout : una de las ultilidades de este comando es poder cambiar entre ramas creadas o que
-aun no lo este, en algunas versiones funciona como el comando 'restore'
+checkout : una de las ultilidades de este comando es poder cambiar entre ramas creadas o que aun no lo este, en algunas versiones funciona como el comando 'restore'
         parametros:
                 <nombre de la rama> : Se mueve HEAD a la rama indicada si es que esta creada.
                 -b <nombre de la rama> : Crea una nueva rama, con el nombre indicado y se
                                         mueve hacia ella.
 
-clone : Este comando nos permite clonar un repositorio externo, esterepositorio nos puede
-servir como un backup de nuestro trabajo.
+clone : Este comando nos permite clonar un repositorio externo, esterepositorio nos puede servir como un backup de nuestro trabajo.
        parametros:
                <direccion del remoto> : clona en la carpeta actual nuestro repositorio
 ubicado en la direccion indicada.
 
-commit : Nos sirve para actualizar nuestro repositor local, con los datos alojados en
-el Stage por defecto sube todos los archivos.
+commit : Nos sirve para actualizar nuestro repositor local, con los datos alojados en el Stage por defecto sube todos los archivos.
         parametros:
                 --amend : da un paso atras y nos permite editar la etiqueta del commit.
 
-diff : compara dos archivos y por defecto esos archivos son aquellos que estan en el espacio
-de trabajo y en el Stage.
+diff : compara dos archivos y por defecto esos archivos son aquellos que estan en el espacio de trabajo y en el Stage.
         parametros:
                 <> : Compara y muestra las diferencias entre los archivos del Stage y los
                         que estan siendo modificados en el espacio de trabajo.
@@ -59,8 +54,7 @@ de trabajo y en el Stage.
                 HEAD-num , num = 1...n con n natural : Podra comparar HEAD con alguno anterior
                                                         y mostrarnos las diferencias.
 
-flecht : Nos permite ver que cambios se profujeron en el 'repositorio fijo' respecto al
-clon (del 'repositorio fijo'), previamente creado.
+flecht : Nos permite ver que cambios se profujeron en el 'repositorio fijo' respecto al clon (del 'repositorio fijo'), previamente creado.
        parametros:
                <> : Nos informa los archivos modificados.
 
@@ -84,8 +78,7 @@ log : Nos permite visualizar todos los commits que se hicieron, quienes lo hicie
                         del commit.
 
 
-merge: Es una operacion de fusion de ramas, puede generar conflictos en determinados casos.
-Esta fusion tiene 3 metodods posibles: fast-foward, estrategia recursiva y mezcla con conflicto.
+merge: Es una operacion de fusion de ramas, puede generar conflictos en determinados casos. Esta fusion tiene 3 metodods posibles: fast-foward, estrategia recursiva y mezcla con conflicto.
         parametros:
                 <nombre de una rama> : Mezclara la rama actual con aquella indicada.
 
@@ -99,9 +92,7 @@ mv : Mueve y renombra archivos
                 <nombre viejo>...<lugar nuevo/nombre nuevo> : mueve el archivo
 
 
-pull : Nos permite actualizar nuestro clon del 'repositorio fijo' previamente clonado
-tras verificar que archivos son los que se deben actualizar. luego de esto procede
-a fusionar dos ramas:
+pull : Nos permite actualizar nuestro clon del 'repositorio fijo' previamente clonado tras verificar que archivos son los que se deben actualizar. luego de esto procede a fusionar dos ramas:
         * una contiene el clon del 'repositorio fijo'.
         * la otra contiene el estado actual del 'repositorio fijo'.
 Asi no debemos clonarlo cada vez que se realice un cambio.
@@ -111,8 +102,7 @@ Asi no debemos clonarlo cada vez que se realice un cambio.
 			commits innecesarios. Es un comando destructivo porque reescribe 
 			el historial, pero es adecuado para mantener en orden el trabajo.
 		
-push : nos permite enviar a nuestro 'repositorio fijo', todos los cambios realizados en
-el repositorio local. Previamente se debe habilitar la conexion y debe existir el repositorio
+push : nos permite enviar a nuestro 'repositorio fijo', todos los cambios realizados en el repositorio local. Previamente se debe habilitar la conexion y debe existir el repositorio
 de destino.
         parametros:
 		<> : Envia nuestro trabajo completo hacia el 'repositorio fijo'.
@@ -122,29 +112,19 @@ de destino.
                 --all <nombreR> : Envia todo lo que se almacena en este repositorio local, se le
                                 debe indicar el nombre del repositorio de destino.
 
-rebase : Su funcion consiste en fusionar dos ramas pero sin necesidad de crear otro commit.
-Esto es logrado al reacomodar los commits realizados entre ciertos momentos, lo cual nos brinda
-un ordenamiento visual en nuestro historial , pero nos quita informacion importante, como por
-ejemplo el desarrollo en ramas y sus respectivas fusioes. Este es un comando destructivo 
-ya que reescribe el historial, se debe manejar con precaucion en momentos de trabajo 
-en equipo.
+rebase : Su funcion consiste en fusionar dos ramas pero sin necesidad de crear otro commit. Esto es logrado al reacomodar los commits realizados entre ciertos momentos, lo cual nos brinda un ordenamiento visual en nuestro historial , pero nos quita informacion importante, como por ejemplo el desarrollo en ramas y sus respectivas fusioes. Este es un comando destructivo ya que reescribe el historial, se debe manejar con precaucion en momentos de trabajo en equipo.
 	parametros:
 		<NombreRA> : Realiza el proceso de reordenamiento desde la rama actual
 			hasta la rama llamada 'nombreRA'
 
-remote : Nos facilita la creacion y la comunicacion con los remotos, hay que
-tener en cuenta que un remoto no es mas que un repositorio al que podemos tener o no
-acceso
+remote : Nos facilita la creacion y la comunicacion con los remotos, hay que tener en cuenta que un remoto no es mas que un repositorio al que podemos tener o no acceso
         parametros:
                 <> : Enlista los remotos que ya estan habilitados para la comunicacion.
                 add <nombre><direccion>: Habilita la comunicacion con el remoto, el nombre
                                         ingresado da nombre al remoto, la direccion
                                         ingresada da la ubicacion de ese remoto.
 
-reset : Nos es util para eliminar commits hechos, tiene 3 opciones de uso, el primero
-es por defecto y nos deja los archivos incluidos en esos commits en el espacio de
-trabajo, el segundo con el parametro --soft nos deja los archivos en el Stage y por
-ultimo --hard que nos elimina el commit y su contenido.
+reset : Nos es util para eliminar commits hechos, tiene 3 opciones de uso, el primero es por defecto y nos deja los archivos incluidos en esos commits en el espacio de trabajo, el segundo con el parametro --soft nos deja los archivos en el Stage y por ultimo --hard que nos elimina el commit y su contenido.
         parrametros:
                 <> : Elimina el ultimo commit poniendo los archivos en nustro
                                 espacio de trabajo.
@@ -164,12 +144,12 @@ restore: Restaura el estado de un archivo.
 revert : nos revierte a un estado anterior al commit mas actual o dependiendo el nombre del
 commit que le indiquemos.
         parametros:
-                <nombre del commit> : nos crea un commit nuevo donde agrega lo que se le
-                                        quito y le quita lo que se le agrego al commit con
-                                        nombre indicado y de ese modo hace el commit.
-                --no-commit : nos permite almacenar los archivos reestaurados en el Stage
-                                asi podremos agregarle o modificarlo para lluego con el
-                                parametro --continue poderlos  enviar al repositorio local.
+                <nombre del commit> : nos crea un commit nuevo donde agrega lo que se le quito
+					y le quita lo que se le agrego al commit con nombre 
+					indicado y de ese modo hace el commit.
+                --no-commit : nos permite almacenar los archivos reestaurados en el Stage asi 
+				podremos agregarle o modificarlo para lluego con el parametro 
+				--continue poderlos  enviar al repositorio local.
 
 
 rm : Nos ayuda en la eliminacion de archivos
@@ -177,12 +157,7 @@ rm : Nos ayuda en la eliminacion de archivos
                 <nombre/s de archivo/s> : elimina el/los archivo/s nombrado/s
 
 
-stash : Me permite almacenar el estado del espacio de trabajo (WorkSpace) dentro de
-un stash(aun no se si es un archivo o una carpeta). El stsah se almacena dentro del
-Stage y luego lo limpia. Asi podriamos movernos a otra rama y trabajar en ella
-sin perder el trabajo interrumpido, conservandolo en el mismo WorkSpace. a
-los stash el ultimo stash
-pudiendole poner hasta una descripcion para guiarnos'.
+stash : Me permite almacenar el estado del espacio de trabajo (WorkSpace) dentro de un stash(aun no se si es un archivo o una carpeta). El stsah se almacena dentro del Stage y luego lo limpia. Asi podriamos movernos a otra rama y trabajar en ella sin perder el trabajo interrumpido, conservandolo en el mismo WorkSpace. A los stash el ultimo stash pudiendole poner hasta una descripcion para guiarnos'.
 guiarnos.
         parameetros:
                 <> : Almacena el estado actual del WorkSpace.
@@ -190,5 +165,4 @@ guiarnos.
                 drop :  Elimina el ultimo estado almacenado.
 		list : Enlista los  WorkSpace almacenados.
                 pop : Simpliffica ambas acciones anteriores.
-                save "<msje descriptivo>" : puede almacenarse con una descripcion
-                                        asi nos guiariamos en el desarrollo.
+                save "<msje descriptivo>" : puede almacenarse con una descripcion asi nos guiariamos en el desarrollo.
